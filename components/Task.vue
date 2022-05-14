@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div :class="`icon ${task.done && 'active'}`"
-         @click="toggleDone">
+         @click="updateTask">
       <svg>
         <use :xlink:href="`icons/${task.done ? 'done' : 'undo'}.svg#path`"></use>
       </svg>
@@ -21,12 +21,14 @@ export default {
   props: ['task'],
   methods: {
     // 是否完成
-    toggleDone() {
-      this.$store.commit('TOGGLE_TASK', this.task)
+    updateTask() {
+      // this.$store.commit('UPDATE_TASK', this.task)
+      this.$store.dispatch('UPDATE_TASK', this.task)
     },
     // 移除任務
     removeTask() {
-      this.$store.commit('REMOVE_TASK', this.task)
+      // this.$store.commit('REMOVE_TASK', this.task)
+      this.$store.dispatch('REMOVE_TASK', this.task)
     }
   }
 }
