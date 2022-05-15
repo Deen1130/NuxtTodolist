@@ -51,16 +51,16 @@ export default {
   // 路由 *修改後必須重新啟用項目
   router: {
     // 中間件
-    middleware: 'redirect',
+    middleware: 'redirect', // middleware 資料夾內的 redirect.js
     // 延伸路由 (路由, 解析)
     extendRoutes(routes, resolve) {
       routes.push(
-        // path: '*' 沒有此路徑 redirect 重新定向路徑
-        {
-          name: '404',
-          path: '*',
-          redirect: '/404'
-        }
+        // path: '*' 沒有此路徑 redirect 重新定向路徑，但 layouts/error 佈局的錯誤就無法再被使用
+        // {
+        //   name: '404',
+        //   path: '*',
+        //   redirect: '/404'
+        // }
       )
     }
   }

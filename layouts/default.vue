@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- 主要內容 -->
     <Header />
     <div>
       <keep-alive>
