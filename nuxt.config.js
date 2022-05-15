@@ -46,5 +46,23 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  // 路由 *修改後必須重新啟用項目
+  router: {
+    // 中間件
+    middleware: 'redirect',
+    // 延伸路由 (路由, 解析)
+    extendRoutes(routes, resolve) {
+      routes.push(
+        // path: '*' 沒有此路徑 redirect 重新定向路徑
+        {
+          name: '404',
+          path: '*',
+          redirect: '/404'
+        }
+      )
+    }
   }
+
 }
