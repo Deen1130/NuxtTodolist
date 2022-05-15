@@ -3,14 +3,14 @@
     <div :class="`icon ${task.done && 'active'}`"
          @click="updateTask">
       <svg>
-        <use :xlink:href="`icons/${task.done ? 'done' : 'undo'}.svg#path`"></use>
+        <use :xlink:href="`/icons/${task.done ? 'done' : 'undo'}.svg#path`"></use>
       </svg>
     </div>
     <div :class="`content ${task.done && 'active'}`">{{ task.content }}</div>
     <div class="icon del"
          @click="removeTask">
       <svg>
-        <use xlink:href="icons/del.svg#path"></use>
+        <use xlink:href="/icons/del.svg#path"></use>
       </svg>
     </div>
   </div>

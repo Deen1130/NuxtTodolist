@@ -19,7 +19,7 @@
           <div class="icon"
                @click="addTask">
             <svg>
-              <use xlink:href="icons/add.svg#path"></use>
+              <use xlink:href="/icons/add.svg#path"></use>
             </svg>
           </div>
         </div>

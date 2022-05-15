@@ -7,7 +7,7 @@
       <div class="box">
         <div class="icon">
           <svg>
-            <use xlink:href="icons/bars.svg#path"></use>
+            <use xlink:href="/icons/bars.svg#path"></use>
           </svg>
         </div>
         <nuxt-link class="title"
@@ -18,7 +18,7 @@
         <LangSwitcher />
         <div class="icon">
           <svg>
-            <use xlink:href="icons/signOut.svg#path"></use>
+            <use xlink:href="/icons/signOut.svg#path"></use>
           </svg>
         </div>
       </div>
