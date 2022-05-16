@@ -4,7 +4,6 @@
       <div class="task-box">
         <div class="title">{{ $t('text1') }}</div>
         <div class="tasks">
-          <!-- 使用 儲存狀態數據 -->
           <div class="box"
                v-if="$store.state.tasks.length === 0">暫且無任務</div>
           <Task v-for="(data, index) in $store.state.tasks"
@@ -31,7 +30,6 @@
 <script>
 import axios from 'axios'
 
-// firebase 即時資料庫 API
 const api = 'https://kittenflutter-56047.firebaseio.com/todolist/tasks.json'
 
 export default {
@@ -41,39 +39,21 @@ export default {
     }
   },
   async asyncData({ store }) {
-    // axios 請求
     try {
       const data = await axios.get(api).then(response => {
         return response.data
       })
-      // firebase 即時資料庫 API，須抽取對象value值放置數組
       console.log('axios', Object.values(data))
       store.commit('GET_TASK', Object.values(data))
     } catch (error) {
       console.log(error)
     }
-    // fetch 請求
-    // try {
-    //   const data = await fetch(api).then(response => {
-    //     if (response.ok) {
-    //       return response.json()
-    //     }
-    //     throw new Error('請求失敗')
-    //   })
-    //   console.log('fetch', Object.values(data))
-    //   store.commit('GET_TASK', Object.values(data))
-    // } catch (error) {
-    //   console.log(error)
-    // }
   },
   mounted: () => {
-    // console.log('已監聽')
   },
   methods: {
-    // 增加任務
     addTask() {
       if (this.newTaskStr) {
-        // this.$store.commit('ADD_TASK', this.newTaskStr)
         this.$store.dispatch('ADD_TASK', this.newTaskStr)
         this.newTaskStr = ''
       }

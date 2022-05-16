@@ -1,8 +1,6 @@
 <template>
   <div>
     <div :class="`loading ${$store.state.isLoading && 'active'}`">
-      <!-- 使用 assets 資產須加上波浪符號 -->
-      <!-- <img src="~/assets/images/AjaxLoader.gif" /> -->
       <img src="/images/AjaxLoader.gif" />
     </div>
     <header>

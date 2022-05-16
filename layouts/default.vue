@@ -4,7 +4,6 @@
     <div>
       <keep-alive>
         <transition name="bounceIn" mode="out-in">
-          <!-- 路由視圖 -->
           <Nuxt />
         </transition>
       </keep-alive>

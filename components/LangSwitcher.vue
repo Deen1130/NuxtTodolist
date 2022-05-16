@@ -22,7 +22,6 @@ export default {
     }
   },
   methods: {
-    // 設置語言
     setLang(value) {
       this.$store.commit('SET_LANG', value)
       this.$i18n.locale = value

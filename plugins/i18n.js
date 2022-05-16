@@ -6,11 +6,11 @@ Vue.use(VueI18n)
 export default ({ app, store }) => {
   app.i18n = new VueI18n({
     locale: store.state.locale,
-    fallbackLocale: 'en', // 回退本地化
-    silentFallbackWarn: true, // 靜默後備警告
+    fallbackLocale: 'en',
+    silentFallbackWarn: true,
     messages: {
-      en: require('~/locales/en.json'), // 英文
-      zh: require('~/locales/zh.json'), // 中文
+      en: require('~/locales/en.json'),
+      zh: require('~/locales/zh.json'),
     },
   })
   app.i18n.path = (link) => {

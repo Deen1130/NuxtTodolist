@@ -20,14 +20,10 @@
 export default {
   props: ['task'],
   methods: {
-    // 是否完成
     updateTask() {
-      // this.$store.commit('UPDATE_TASK', this.task)
       this.$store.dispatch('UPDATE_TASK', this.task)
     },
-    // 移除任務
     removeTask() {
-      // this.$store.commit('REMOVE_TASK', this.task)
       this.$store.dispatch('REMOVE_TASK', this.task)
     }
   }
